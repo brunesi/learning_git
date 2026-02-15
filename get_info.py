@@ -18,16 +18,16 @@ def obter_infos():
         distro = "Informação lsb_release não disponível"
 
     # Exibição dos resultados
-    print("-" * 30)
+    print("-" * 35)
     print(f"Data/Hora: {utc_now} UTC ({local_now} Local)")
-    print("-" * 30)
+    print("-" * 35)
     print(f"Sistema: {sistema.system}")
     print(f"Node Name: {sistema.node}")
     print(f"Release: {sistema.release}")
     print(f"Versão: {sistema.version}")
     print(f"Máquina: {sistema.machine}")
     print(f"Distribuição: {distro}")
-    print("-" * 30)
+    print("-" * 35)
 
 if __name__ == "__main__":
     obter_infos()

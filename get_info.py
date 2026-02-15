@@ -1,5 +1,6 @@
 import platform
 import subprocess
+import shutil
 from datetime import datetime, timezone
 
 def obter_infos():
@@ -27,6 +28,15 @@ def obter_infos():
     print(f"Versão: {sistema.version}")
     print(f"Máquina: {sistema.machine}")
     print(f"Distribuição: {distro}")
+    print("-" * 35)
+    
+    # 4. Informações de Espaço em Disco
+    disk_usage = shutil.disk_usage('/')
+    total_gb = disk_usage.total / (1024**3)
+    used_gb = disk_usage.used / (1024**3)
+    free_gb = disk_usage.free / (1024**3)
+    
+    print(f"Espaço em Disco (/): Total: {total_gb:.2f} GB | Uso: {used_gb:.2f} GB | Livre: {free_gb:.2f} GB")
     print("-" * 35)
 
 if __name__ == "__main__":
